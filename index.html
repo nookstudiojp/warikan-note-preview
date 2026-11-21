@@ -13,13 +13,35 @@
 <script defer src="receipt.js"></script>
 <script defer src="result-image.js"></script>
 <script defer src="app.js"></script>
+<script defer src="tutorial.js"></script>
 </head>
 <body>
-<header class="top"><div class="wrap brand"><img src="app-icon.png" alt="" width="36" height="36" style="border-radius:10px;flex:none"><strong>ワリカンノート</strong><button id="settings" class="settings-button" type="button">設定</button></div></header>
+<header class="top"><div class="wrap brand"><img src="app-icon.png" alt="" width="36" height="36" style="border-radius:10px;flex:none"><strong>ワリカンノート</strong><button id="settings" class="settings-button" type="button">設定</button><button class="help-button" type="button" data-open-tutorial>使い方</button></div></header>
+<aside class="wrap tutorial-banner" id="tutorial-banner" aria-label="初回案内" hidden>
+  <button type="button" data-open-tutorial>はじめての方へ · 使い方を見る</button>
+  <button type="button" id="dismiss-tutorial" aria-label="使い方の案内を閉じる">×</button>
+</aside>
 <main class="wrap" id="screen"></main>
 <nav id="bottom-tabs" class="bottom-tabs" aria-label="メインメニュー"></nav>
 <dialog id="editor" aria-labelledby="form-title">
 <form id="editor-form"><h2 id="form-title"></h2><div id="fields"></div><p id="form-error" role="alert" hidden></p><div class="actions"><button type="button" id="cancel">キャンセル</button><button class="primary" id="save">保存する</button></div></form>
+</dialog>
+<dialog id="tutorial" aria-labelledby="tutorial-title">
+  <h2 id="tutorial-title">使い方</h2>
+  <div class="tutorial-text">1. メンバーを登録する
+「支払い」タブのメンバー管理から、割り勘するメンバーを追加します。
+
+2. 支払いを記録する
+右下の「＋」ボタンから、支払い名・金額・立て替えた人・割り勘の対象を入力します。
+
+3. 精算を確認する
+「精算」タブに、誰が誰にいくら返すかが自動で表示されます。
+
+4. 結果を共有する
+「結果をコピー」でテキストを共有できます。画像で共有したい場合は、設定で「結果画像保存」をONにしてください。
+
+設定画面では、切り上げ精算・割合指定・メンバー色分けなど、追加機能をONにできます（初期状態はすべてOFFです）。</div>
+  <form method="dialog" class="actions"><button type="submit">閉じる</button></form>
 </dialog>
 <div id="notice" role="status"></div>
 </body>

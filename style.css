@@ -394,3 +394,21 @@ body { background: var(--cream); }
 .result-actions { display: flex; flex-wrap: wrap; gap: .55rem; }
 .feature-options { display: grid; gap: .35rem; }
 .feature-options .check { min-height: 44px; }
+
+.help-button { min-height: 42px; white-space: nowrap; }
+.settings-button { white-space: nowrap; }
+.tutorial-banner:not([hidden]) {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .25rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+.tutorial-banner button { min-height: 40px; border: 0; font-size: .85rem; }
+.tutorial-text { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.65; margin-bottom: 1rem; }
+@media (max-width: 360px) {
+  .brand { gap: .35rem; }
+  .brand button { padding-inline: .5rem; }
+}

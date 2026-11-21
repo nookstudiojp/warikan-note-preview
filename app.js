@@ -206,7 +206,7 @@ function memberView(group) {
 }
 
 function manageView(group, result) {
-  return `    <section class="panel"><div class="bar"><h2>支払い</h2></div>
+  return `    <section class="panel"><div class="bar"><h2>支払い</h2>${button('groups', 'メンバー管理')}</div>
       <div class="list">${group.payments.map(payment => `<div class="item row"><div>
         ${payment.registeredDate ? `<time class="payment-date" datetime="${escape(payment.registeredDate)}">${escape(payment.registeredDate.replaceAll('-', '/'))}</time>` : '<span class="payment-date">登録日不明</span>'}
         <strong>${escape(payment.name)} · ${yen(payment.amount)}</strong><br>
